@@ -1,9 +1,10 @@
 import ReactDOM from "react-dom";
+import { IssuesList } from "./components/IssuesList";
 
 const App = () => {
   return (
     <div>
-     App
+      <IssuesList />
     </div>
   );
 };
