@@ -7,6 +7,8 @@ const octokit = new Octokit({
   userAgent: "github-issues-viewer/1.0.0",
 });
 
+//TODO make general client which take endpoint and conf params
+
 function fetchIssues() {
   return octokit
     .request("GET /repos/{owner}/{repo}/issues", {
@@ -30,4 +32,28 @@ function fetchIssues() {
     });
 }
 
-export { fetchIssues };
+function fetchIssue(id) {
+  return octokit
+    .request("/repos/{owner}/{repo}/issues/{issue_number}", {
+      owner: "facebook",
+      repo: "react",
+      issue_number: id,
+    })
+    .then(async (response) => {
+      const { data, status } = await response;
+      if (status === 200) {
+        if (data) {
+          console.log("data: ", data);
+          return data;
+        } else {
+          return Promise.reject(new Error("No data"));
+        }
+      } else {
+        return Promise.reject(
+          new Error(`response failed, status code: ${status}`)
+        );
+      }
+    });
+}
+
+export { fetchIssues, fetchIssue };
