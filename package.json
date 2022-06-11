@@ -1,5 +1,5 @@
 {
-  "name": "github-issues-viewer",
+  "name": "cameo-parison",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,28 +9,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kornels5/github-issues-viewer.git"
+    "url": "git+https://github.com/kornels5/cameoParison.git.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kornels5/github-issues-viewer/issues"
+    "url": "https://github.com/kornels5/cameoParison.git/issues"
   },
-  "homepage": "https://github.com/kornels5/github-issues-viewer#readme",
+  "homepage": "https://github.com/kornels5/cameoParison.git#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "buffer": "^6.0.3",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "parcel": "^2.5.0",
     "postcss": "^8.4.13",
-    "process": "^0.11.10",
-    "tailwindcss": "^3.0.24"
+    "prettier": "^2.6.2",
+    "process": "^0.11.10"
   },
   "dependencies": {
-    "octokit": "^1.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0"
