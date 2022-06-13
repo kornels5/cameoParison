@@ -23,7 +23,7 @@ const createSetData = (data) => {
   };
 };
 
-function fetchCelebs() {
+const fetchCelebs = () => {
   return window.fetch(URL).then(async (response) => {
     const data = await response.json();
     if (response.ok) {
@@ -32,6 +32,6 @@ function fetchCelebs() {
       throw new Error("Response failed");
     }
   });
-}
+};
 
 export { fetchCelebs };
