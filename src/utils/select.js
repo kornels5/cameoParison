@@ -19,7 +19,6 @@ export function select(celebs, lookup, category) {
   const filtered = celebs.filter((c) => {
     return c.categories.includes(category);
   });
-
   const seen = new Set();
   const selection = [];
 

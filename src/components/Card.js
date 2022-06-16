@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 const Card = ({ celeb, onClick }) => {
+  const [disabled, setDisabled] = useState(false);
+  const clickHandler = () => {
+    onClick();
+    setDisabled(true);
+  };
+
   return (
     <div className="card-outer">
       <button
@@ -6,7 +14,8 @@ const Card = ({ celeb, onClick }) => {
         style={{
           backgroundImage: `url("${celeb.image}")`,
         }}
-        onClick={onClick}
+        onClick={clickHandler}
+        disabled={disabled}
       >
         <div className="details ">
           <h2 className="">
@@ -18,7 +27,7 @@ const Card = ({ celeb, onClick }) => {
               {celeb.name}
             </a>
           </h2>
-          <p className="type ">Musician - Singer/Songwriter</p>
+          <p className="type ">{celeb.type}</p>
         </div>
       </button>
     </div>

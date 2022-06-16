@@ -5,7 +5,7 @@ import { WelcomeScreen } from "./components/WelcomeScreen";
 import { PlayingScreen } from "./components/PlayingScreen";
 import { useAsync } from "./hooks/useAsync";
 import { fetchCelebs } from "./services/fetchCelebs";
-import { select } from "./services/select";
+import { select } from "./utils/select";
 
 const App = () => {
   const [state, setState] = useState("welcome"); //welcome or playing
