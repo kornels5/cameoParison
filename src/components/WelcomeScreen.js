@@ -22,7 +22,7 @@ const WelcomeScreen = ({ setCategory }) => {
       </h1>
 
       <p>
-        On
+        On &nbsp;
         <a href="https://cameo.com" target="_blank" rel="noreferrer">
           cameo.com
         </a>

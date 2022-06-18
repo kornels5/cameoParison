@@ -11,7 +11,7 @@ const images = {
 };
 const ROUNDS = 10;
 
-const PlayingScreen = ({ selection }) => {
+const PlayingScreen = ({ selection, setState }) => {
   //rounds represents: 0 - 9
   const [round, setRound] = useState(0);
   const [lastResult, setLastResult] = useState(null);
@@ -60,6 +60,8 @@ const PlayingScreen = ({ selection }) => {
               <Card
                 celeb={data[0]}
                 onClick={() => submit(data[0], data[1], 1)}
+                showPrice={!!lastResult}
+                winner={data[0].price >= data[1].price}
               />
             </div>
             <div>
@@ -74,6 +76,8 @@ const PlayingScreen = ({ selection }) => {
               <Card
                 celeb={data[1]}
                 onClick={() => submit(data[0], data[1], -1)}
+                showPrice={!!lastResult}
+                winner={data[1].price >= data[0].price}
               />
             </div>
           </div>
@@ -86,7 +90,9 @@ const PlayingScreen = ({ selection }) => {
             <strong>
               {results.filter((x) => x === "right").length}/{results.length}
             </strong>
-            <button color="primary">Back to main screen</button>
+            <button color="primary" onClick={() => setState("welcome")}>
+              Back to main screen
+            </button>
           </div>
         )}
       </div>

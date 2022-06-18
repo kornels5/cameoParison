@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WelcomeScreen } from "./components/WelcomeScreen";
 import { PlayingScreen } from "./components/PlayingScreen";
 import { useAsync } from "./hooks/useAsync";
@@ -27,7 +26,7 @@ const App = () => {
   if (state === "welcome") {
     screen = <WelcomeScreen setCategory={start} />;
   } else if (state === "playing") {
-    screen = <PlayingScreen selection={selectedCelebs} />;
+    screen = <PlayingScreen selection={selectedCelebs} setState={setState} />;
   }
 
   return <main>{screen}</main>;

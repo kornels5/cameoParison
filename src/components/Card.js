@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Card = ({ celeb, onClick }) => {
+const Card = ({ celeb, onClick, showPrice, winner }) => {
   const [disabled, setDisabled] = useState(false);
   const clickHandler = () => {
     onClick();
@@ -17,7 +17,7 @@ const Card = ({ celeb, onClick }) => {
         onClick={clickHandler}
         disabled={disabled}
       >
-        <div className="details ">
+        <div className="details">
           <h2 className="">
             <a
               target="_blank"
@@ -29,6 +29,12 @@ const Card = ({ celeb, onClick }) => {
           </h2>
           <p className="type ">{celeb.type}</p>
         </div>
+        {showPrice && (
+          <div className={`price ${winner ? "large" : ""}`}>
+            {/* in:scale={{ easing: elasticOut, duration: 600 }} */}
+            <span>${celeb.price}</span>
+          </div>
+        )}
       </button>
     </div>
   );
